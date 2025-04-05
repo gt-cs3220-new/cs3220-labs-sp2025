@@ -113,6 +113,7 @@ systolic_array:
 	$(VERILATOR) $(VL_FLAGS_TEST_SYSTOLIC_ARRAY) $(VL_FLAGS) \
 		-GROWS=$(ROWS) \
 		-GCOLS=$(COLS) \
+		-GMULT_LAT=$(MULT_LAT) \
 		-GK=$(K) \
 		test_systolic_array.cpp MAC.v ctrl.v adder.v multiplier.v synchronus_fifo.v -CFLAGS '$(CXXFLAGS_RxC)' 
 	@echo "-- COMPILE -----------------"
@@ -130,7 +131,7 @@ systolic_array:
 
 submit: 
 	@echo "-- ZIPPING ALL THE FILE ---------"
-	zip submission.zip ./*.py ./*.v ./*.h ./*.vh ./*.cpp ./*.c ./Makefile
+	zip submission.zip ./*.v ./*.vh
 
 maintainer-copy::
 clean mostlyclean distclean maintainer-clean::
