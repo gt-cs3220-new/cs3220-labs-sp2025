@@ -137,6 +137,12 @@ Grading command (your bonus code should still work with the original grading com
 
 
 
+## Rules and Potential Violations 
+1. adder and multiplier instances have to be used and used as they are
+2. systolic array IOs **and** default parameters cannot be changed
+3. MAC's default parameters cannot be changed
+4. Any changes to Makefile, test*.cpp, adder and multiplier module definition will not be considered
+
 
 ## FAQ 
 [Q] Useful lecture links for systolic array design?
