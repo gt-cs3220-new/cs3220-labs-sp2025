@@ -140,7 +140,7 @@ Grading command (your bonus code should still work with the original grading com
 ## Rules and Potential Violations 
 1. adder and multiplier instances have to be used and used as they are
 2. systolic array IOs **and** default parameters cannot be changed
-3. MAC's default parameters cannot be changed
+3. for MAC's parameters, as long as we can pass the MULT_LAT parameter in from the top module (systolic_array.v), it's fine
 4. Any changes to Makefile, test*.cpp, adder and multiplier module definition will not be considered
 
 
