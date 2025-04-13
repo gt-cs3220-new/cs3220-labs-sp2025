@@ -1,3 +1,20 @@
+#test simplest case
+make systolic_array ROWS=2 COLS=2 K=2 NUM_TESTS=100 SEED=1
+mv results.log results_2_2_2_100_1.log 
+
+make systolic_array ROWS=2 COLS=2 K=2 NUM_TESTS=100 SEED=2
+mv results.log results_2_2_2_100_2.log 
+
+make systolic_array ROWS=2 COLS=2 K=2 NUM_TESTS=100 SEED=3
+mv results.log results_2_2_2_100_3.log 
+
+make systolic_array ROWS=2 COLS=2 K=2 NUM_TESTS=100 SEED=4
+mv results.log results_2_2_2_100_4.log 
+
+make systolic_array ROWS=2 COLS=2 K=2 NUM_TESTS=100 SEED=5
+mv results.log results_2_2_2_100_5.log 
+
+
 #test different seeds
 make systolic_array ROWS=4 COLS=4 K=4 NUM_TESTS=10 SEED=1
 mv results.log results_4_4_4_10_1.log 
@@ -58,6 +75,12 @@ mv results.log results_2_8_8_100_5_2.log
 make systolic_array ROWS=8 COLS=2 K=2 NUM_TESTS=1000 SEED=5 MULT_LAT=4
 mv results.log results_8_2_2_1000_5_4.log 
 
+echo "Testing simplest 2x2x2 case; expect 5 passes"
+cat results_2_2_2_100_1.log | grep PASSED 
+cat results_2_2_2_100_2.log | grep PASSED 
+cat results_2_2_2_100_3.log | grep PASSED 
+cat results_2_2_2_100_4.log | grep PASSED 
+cat results_2_2_2_100_5.log | grep PASSED 
 echo "Testing different seeds; expect 5 passes"
 cat results_4_4_4_10_1.log | grep PASSED 
 cat results_4_4_4_10_2.log | grep PASSED 
